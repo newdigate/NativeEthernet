@@ -21,3 +21,20 @@ I've done quite a bit of testing to ensure compatibility as much as possible, bu
 
 
 http://www.pjrc.com/teensy/td_libs_Ethernet.html
+
+## i.MX RT1176 / NXP MIMXRT1170-EVKB
+
+This fork runs on the RT1176 (MIMXRT1170-EVKB, 10/100 ENET + RTL8201 PHY) via the
+RT1176 CPU target in the companion FNET fork (https://github.com/newdigate/FNET).
+No board-specific code lives in this library; the Arduino base classes
+(`Client.h`, `Server.h`, `Udp.h`, `IPAddress.{h,cpp}`) are vendored into `src/`
+for cores that do not provide them.
+
+## Licensing inventory
+
+The project license is MIT (© 2020 Tino Hernandez, see LICENSE). Individual files
+carry their own upstream headers, preserved unmodified:
+- `NativeDns.{h,cpp}` — Apache License 2.0 (© 2009-2010 MCQN Ltd)
+- `src/utility/NativeW5100.h` — GPLv2 / LGPLv2.1 (© 2018 Paul Stoffregen, © 2010 Cristian Maglie; constants-only header)
+- Several sources © 2018 Paul Stoffregen / © 2008 Bjoern Hartmann (MIT-style)
+- Vendored base classes keep their upstream headers
