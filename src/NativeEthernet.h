@@ -56,6 +56,7 @@
 #include "Client.h"
 #include "Server.h"
 #include "Udp.h"
+#include "IntervalTimer.h"
 
 enum EthernetLinkStatus {
 	Unknown,
